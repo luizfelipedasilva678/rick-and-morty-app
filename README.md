@@ -1,15 +1,17 @@
-# Next.js 13 template for new projects
+# Rick and morty app
 
-## This template includes
+### Rick and morty app made with Next.js 13
 
-- ### [Jest](https://jestjs.io/pt-BR/)
+#### Technologies
 
-- ### [Husky](https://typicode.github.io/husky/)
+- #### [Jest](https://jestjs.io/pt-BR/)
 
-- ### [Tailwind CSS](https://tailwindcss.com/)
+- #### [Husky](https://typicode.github.io/husky/)
 
-- ### [MUI](https://mui.com/)
+- #### [Tailwind CSS](https://tailwindcss.com/)
 
-- ### [ESlint](https://eslint.org/)
+- #### [MUI](https://mui.com/)
 
-- ### [Prettier](https://prettier.io/)
+- #### [ESlint](https://eslint.org/)
+
+- #### [Prettier](https://prettier.io/)
