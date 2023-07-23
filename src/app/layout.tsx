@@ -6,8 +6,8 @@ import { Providers } from '../providers';
 const oswald = Oswald({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Template Next.js',
-  description: 'Template for Next.js 13 for new projects',
+  title: 'Rick and Morty App',
+  description: 'Rick and Morty App made with Next.js 13',
 };
 
 export default function RootLayout({
