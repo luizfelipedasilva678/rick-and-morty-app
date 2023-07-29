@@ -1,5 +1,3 @@
-'use client';
-
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 
@@ -24,6 +22,7 @@ const CharacterCard = ({ character }: Props) => {
         width={220}
         height={220}
         className="rounded-tl-md rounded-bl-md"
+        data-testid="character-img"
       />
       <Box className="bg-primary w-full rounded-tr-md rounded-br-md p-4 flex flex-col">
         <Typography className="text-white text-3xl mb-5">{name}</Typography>
