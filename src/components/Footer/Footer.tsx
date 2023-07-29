@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <Box
       component={'footer'}
-      className="flex justify-between p-4 fixed bottom-0 w-full"
+      className="flex justify-between p-4 w-full"
       bgcolor={'primary.main'}
     >
       <Box

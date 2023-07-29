@@ -29,7 +29,9 @@ export class RickAndMortyService {
     return res.json();
   }
 
-  async getAllCharacters(filters?: CharacterFilter): Promise<Character[]> {
+  async getAllCharacters(
+    filters?: CharacterFilter
+  ): Promise<SearchResult<Character>> {
     const filter = RickAndMortyService.generateFilter(filters);
 
     return RickAndMortyService.makeRequest(
@@ -45,7 +47,9 @@ export class RickAndMortyService {
     );
   }
 
-  async getAllLocations(filters?: LocationFilter): Promise<Location[]> {
+  async getAllLocations(
+    filters?: LocationFilter
+  ): Promise<SearchResult<Location>> {
     const filter = RickAndMortyService.generateFilter(filters);
 
     return RickAndMortyService.makeRequest(
@@ -61,7 +65,9 @@ export class RickAndMortyService {
     );
   }
 
-  async getAllEpisodes(filters?: EpisodeFilter): Promise<Episode[]> {
+  async getAllEpisodes(
+    filters?: EpisodeFilter
+  ): Promise<SearchResult<Episode>> {
     const filter = RickAndMortyService.generateFilter(filters);
 
     return RickAndMortyService.makeRequest(

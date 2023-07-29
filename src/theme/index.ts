@@ -10,6 +10,7 @@ export const theme = createTheme({
     },
     primary: {
       main: '#13293D',
+      '100': '#97ce4c',
       light: '#fff',
     },
     text: {

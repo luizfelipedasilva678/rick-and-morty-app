@@ -10,6 +10,9 @@ const oswald = Oswald({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Rick and Morty App',
   description: 'Rick and Morty App made with Next.js 13',
+  icons: {
+    icon: '/icon.ico',
+  },
 };
 
 export default function RootLayout({

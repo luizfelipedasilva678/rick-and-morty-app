@@ -1,3 +1,22 @@
+interface PageProps {
+  params: { slug: string };
+  searchParams: SearchParams;
+}
+
+type SearchParams = Record<string, any>;
+
+interface SearchResult<T> {
+  info: SearchResultInfo;
+  results: T[];
+}
+
+interface SearchResultInfo {
+  count: number;
+  pages: number;
+  next: string | null;
+  prev: string | null;
+}
+
 interface Character {
   id: number;
   name: string;
