@@ -1,5 +1,5 @@
 interface PageProps {
-  params: { slug: string };
+  params: Record<string, string>;
   searchParams: SearchParams;
 }
 

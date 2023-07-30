@@ -12,7 +12,8 @@ const PaginationBox = ({ numberOfPages }: Props) => {
   const { push } = useRouter();
   const { get, forEach } = useSearchParams();
   const pathname = usePathname();
-  const activePage = Number(get('page')) !== 0 ? Number(get('page')) : 1;
+  const page = Number(get('page'));
+  const activePage = page !== 0 && !isNaN(page) ? page : 1;
 
   const handleChangePage = (_: ChangeEvent<unknown>, page: number) => {
     const queryStringRecord: Record<string, string> = {};

@@ -25,7 +25,10 @@ const SearchBar = () => {
 
   return (
     <Box className="x1sm:w-full relative">
-      <Button className="absolute right-0 top-3 z-50" onClick={handleClick}>
+      <Button
+        onClick={handleClick}
+        sx={{ position: 'absolute', right: 0, top: '12px', zIndex: 50 }}
+      >
         <SearchIcon style={{ color: '#fff' }} />
       </Button>
       <TextField

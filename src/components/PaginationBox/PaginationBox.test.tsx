@@ -25,6 +25,6 @@ describe('PaginationBox', () => {
 
     expect(
       container.querySelectorAll('.MuiPaginationItem-root').length
-    ).toEqual(6);
+    ).toEqual(9);
   });
 });

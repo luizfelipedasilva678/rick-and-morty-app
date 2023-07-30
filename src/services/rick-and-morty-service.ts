@@ -40,7 +40,7 @@ export class RickAndMortyService {
     );
   }
 
-  async getCharacterById(id: number): Promise<Character> {
+  async getCharacterById(id: number | string): Promise<Character> {
     return RickAndMortyService.makeRequest(
       `${this.baseUrl}/character/${id}`,
       `Failed to fetch character ${id}`
@@ -58,7 +58,7 @@ export class RickAndMortyService {
     );
   }
 
-  async getLocationById(id: number): Promise<Location> {
+  async getLocationById(id: number | string): Promise<Location> {
     return RickAndMortyService.makeRequest(
       `${this.baseUrl}/location/${id}`,
       `Failed to fetch location ${id}`
@@ -76,11 +76,24 @@ export class RickAndMortyService {
     );
   }
 
-  async getEpisodeById(id: number): Promise<Episode> {
+  async getEpisodeById(id: number | string): Promise<Episode> {
     return RickAndMortyService.makeRequest(
       `${this.baseUrl}/episode/${id}`,
       `Failed to fetch episode ${id}`
     );
+  }
+
+  async getEpisodesByBatch(id: string): Promise<Episode[]> {
+    const result = await RickAndMortyService.makeRequest(
+      `${this.baseUrl}/episode/${id}`,
+      `Failed to fetch episodes ${id}`
+    );
+
+    if (Array.isArray(result)) {
+      return result;
+    } else {
+      return [result];
+    }
   }
 }
 
