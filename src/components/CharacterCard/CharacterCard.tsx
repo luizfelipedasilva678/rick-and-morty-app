@@ -21,7 +21,7 @@ const CharacterCard = ({ character }: Props) => {
         alt={name}
         width={220}
         height={220}
-        className="rounded-tl-md rounded-bl-md flex-grow xsm:w-40"
+        className="rounded-tl-md rounded-bl-md flex-grow xsm:w-40 x2sm:w-28"
         data-testid="character-img"
       />
       <Box className="bg-primary w-full rounded-tr-md rounded-br-md p-4 flex flex-col">

@@ -1,23 +1,44 @@
 'use client';
 
-import { NUMBER_OF_PAGES } from '@/src/constants';
 import { Pagination } from '@mui/material';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { type ChangeEvent } from 'react';
 
-const PaginationBox = () => {
+interface Props {
+  numberOfPages: number;
+}
+
+const PaginationBox = ({ numberOfPages }: Props) => {
   const { push } = useRouter();
-  const { get } = useSearchParams();
-  const page = get('page') ?? '';
+  const { get, forEach } = useSearchParams();
+  const pathname = usePathname();
+  const activePage = Number(get('page')) !== 0 ? Number(get('page')) : 1;
+
+  const handleChangePage = (_: ChangeEvent<unknown>, page: number) => {
+    const queryStringRecord: Record<string, string> = {};
+
+    forEach((value, key) => {
+      if (key === 'page') {
+        queryStringRecord[key] = String(page);
+      } else {
+        queryStringRecord[key] = value;
+      }
+    });
+
+    if (!('page' in queryStringRecord)) queryStringRecord.page = String(page);
+
+    const newQueryString = new URLSearchParams(queryStringRecord).toString();
+
+    push(`${pathname}?${newQueryString}`);
+  };
 
   return (
     <Pagination
-      count={NUMBER_OF_PAGES}
-      defaultPage={page !== '' ? Number(page) : 1}
+      count={numberOfPages}
+      page={activePage}
       variant="outlined"
       color="primary"
-      onChange={(_, page) => {
-        push(`/?page=${page}`);
-      }}
+      onChange={handleChangePage}
       size="small"
       sx={{
         marginTop: '16px',

@@ -6,5 +6,5 @@ export default async function Index({ searchParams }: PageProps) {
   const page = getPageNumber(searchParams);
   const searchResult = await rickAndMortyService.getAllCharacters({ page });
 
-  return <App characters={searchResult.results} />;
+  return <App searchResult={searchResult} />;
 }

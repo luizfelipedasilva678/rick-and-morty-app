@@ -8,22 +8,23 @@ jest.mock('next/navigation', () => ({
   useSearchParams: jest.fn().mockReturnValue({
     get: jest.fn(),
   }),
+  usePathname: jest.fn().mockReturnValue('/'),
 }));
 
 describe('PaginationBox', () => {
   it('should render correctly', () => {
-    const sut = render(<PaginationBox />);
+    const sut = render(<PaginationBox numberOfPages={9} />);
 
     expect(sut).toBeDefined();
   });
 
   it('should render correctly', () => {
-    const sut = render(<PaginationBox />);
+    const sut = render(<PaginationBox numberOfPages={9} />);
 
     const { container } = sut;
 
     expect(
       container.querySelectorAll('.MuiPaginationItem-root').length
-    ).toEqual(9);
+    ).toEqual(6);
   });
 });

@@ -1,6 +1,12 @@
 import { render } from '@testing-library/react';
 import Header from './Header';
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn().mockReturnValue({
+    push: jest.fn(),
+  }),
+}));
+
 describe('Header', () => {
   it('shoudl render correctly', () => {
     const sut = render(<Header />);
