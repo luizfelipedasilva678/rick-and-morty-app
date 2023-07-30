@@ -15,7 +15,7 @@ const CharacterCard = ({ character }: Props) => {
   } = character;
 
   return (
-    <Box className="flex cursor-pointer">
+    <Box className="flex cursor-pointer" data-testid="character-card">
       <Image
         src={image}
         alt={name}

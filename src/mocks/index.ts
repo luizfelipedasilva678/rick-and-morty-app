@@ -34,3 +34,10 @@ export const characterCard = {
   url: 'https://rickandmortyapi.com/api/character/1',
   created: '2017-11-04T18:48:46.250Z',
 };
+
+export const characterCards = [
+  characterCard,
+  { ...characterCard, id: 2 },
+  { ...characterCard, id: 3 },
+  { ...characterCard, id: 4 },
+];
