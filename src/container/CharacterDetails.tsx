@@ -11,8 +11,6 @@ const CharacterDetails = async ({ character }: Props) => {
   const episodesStr = buildEpisodesIdsStr(episode);
   const episodes = await rickAndMortyService.getEpisodesByBatch(episodesStr);
 
-  console.log(`Episodes: `, episodes);
-
   return (
     <main className="flex flex-col items-center justify-between p-4">
       <CharacterDetail character={character} episodes={episodes} />
