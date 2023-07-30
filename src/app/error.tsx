@@ -1,32 +1,29 @@
-'use client'; // Error components must be Client Components
+'use client';
 
-import { useEffect } from 'react';
+import { Box, Link, Typography } from '@mui/material';
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error('Digest', error.cause);
-  }, [error]);
-
+export default function Error() {
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => {
-            reset();
-          }
-        }
-      >
-        Try again
-      </button>
-    </div>
+    <Box
+      component="section"
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        minWidth: '100%',
+        minHeight: '100vh',
+      }}
+    >
+      <Typography component={'h1'} variant="h1">
+        OOPS!
+      </Typography>
+      <Typography component={'p'} sx={{ fontSize: '20px', marginTop: '10px' }}>
+        The page you are looking for might not accessible.
+      </Typography>
+      <Link href="/" className="text-2xl no-underline">
+        Back to home
+      </Link>
+    </Box>
   );
 }
