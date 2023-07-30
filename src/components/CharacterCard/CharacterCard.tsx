@@ -21,18 +21,18 @@ const CharacterCard = ({ character }: Props) => {
         alt={name}
         width={220}
         height={220}
-        className="rounded-tl-md rounded-bl-md"
+        className="rounded-tl-md rounded-bl-md flex-grow xsm:w-40"
         data-testid="character-img"
       />
       <Box className="bg-primary w-full rounded-tr-md rounded-br-md p-4 flex flex-col">
-        <Typography className="text-white text-3xl mb-5">{name}</Typography>
-        <Typography className="text-white text-3xl  mb-1">
+        <Typography className="text-white text-lg mb-5">{name}</Typography>
+        <Typography className="text-white text-base  mb-1">
           Origin location: {originName}
         </Typography>
-        <Typography className="text-white text-3xl  mb-1">
+        <Typography className="text-white text-base  mb-1">
           Status: {status}
         </Typography>
-        <Typography className="text-white text-3xl  mb-1">
+        <Typography className="text-white text-base  mb-1">
           Specie: {species}
         </Typography>
       </Box>

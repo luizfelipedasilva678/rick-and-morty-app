@@ -7,7 +7,10 @@ interface Props {
 
 const CharactersDisplay = ({ characters }: Props) => {
   return (
-    <Box component={'div'} className={'grid grid-cols-3 gap-4 w-full'}>
+    <Box
+      component={'div'}
+      className={'grid grid-cols-3 gap-4 w-full sm:grid-cols-1'}
+    >
       {characters.map((character) => (
         <CharacterCard key={character.id} character={character} />
       ))}

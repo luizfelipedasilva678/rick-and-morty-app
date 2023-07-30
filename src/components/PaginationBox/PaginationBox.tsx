@@ -18,6 +18,7 @@ const PaginationBox = () => {
       onChange={(_, page) => {
         push(`/?page=${page}`);
       }}
+      size="small"
       sx={{
         marginTop: '16px',
         '& .MuiPaginationItem-ellipsis': {
