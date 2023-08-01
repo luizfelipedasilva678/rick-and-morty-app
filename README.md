@@ -2,6 +2,8 @@
 
 ### Rick and morty app made with Next.js 13
 
+### You can use the final result here: https://rick-and-morty-app-six-flame.vercel.app/
+
 #### Technologies
 
 - #### [Jest](https://jestjs.io/pt-BR/)
@@ -15,3 +17,5 @@
 - #### [ESlint](https://eslint.org/)
 
 - #### [Prettier](https://prettier.io/)
+
+
