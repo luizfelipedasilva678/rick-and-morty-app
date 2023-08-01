@@ -23,20 +23,29 @@ export class RickAndMortyService {
     return filterStr;
   }
 
-  private static async makeRequest(url: string, errorMessage: string) {
-    const res = await fetch(url);
+  private static async makeRequest(
+    url: string,
+    errorMessage: string,
+    fetchConfigs: NextFetchRequestConfig | undefined = undefined
+  ) {
+    const res = await fetch(
+      url,
+      fetchConfigs !== undefined ? { next: { ...fetchConfigs } } : {}
+    );
     RickAndMortyService.checkResponse(res, errorMessage);
     return res.json();
   }
 
   async getAllCharacters(
-    filters?: CharacterFilter
+    filters?: CharacterFilter,
+    fetchConfigs: NextFetchRequestConfig | undefined = undefined
   ): Promise<SearchResult<Character>> {
     const filter = RickAndMortyService.generateFilter(filters);
 
     return RickAndMortyService.makeRequest(
       `${this.baseUrl}/character${filter}`,
-      'Failed to fetch all characters'
+      'Failed to fetch all characters',
+      fetchConfigs
     );
   }
 

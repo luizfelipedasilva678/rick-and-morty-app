@@ -4,7 +4,10 @@ import { getPageNumber } from '../utils/get-page-number';
 
 export default async function Index({ searchParams }: PageProps) {
   const page = getPageNumber(searchParams);
-  const searchResult = await rickAndMortyService.getAllCharacters({ page });
+  const searchResult = await rickAndMortyService.getAllCharacters(
+    { page },
+    { revalidate: 0 }
+  );
 
   return <App searchResult={searchResult} />;
 }
