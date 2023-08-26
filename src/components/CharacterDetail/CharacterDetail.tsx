@@ -64,7 +64,7 @@ const CharacterDetail = ({ character, episodes }: Props) => {
           >
             {episodes.map((episode) => (
               <Typography
-                className="text-white text-base  mb-1 whitespace-nowrap"
+                className="text-white text-base  mb-1"
                 key={episode.id}
                 data-testid="episode"
               >
