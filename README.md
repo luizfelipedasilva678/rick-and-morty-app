@@ -3,5 +3,5 @@
 ## Running the project locally:
 
 ```
-pnpm run dev
+npm run dev
 ```
